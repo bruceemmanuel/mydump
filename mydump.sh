@@ -5,25 +5,18 @@
 # Version 1.0
 
 # usuário e senha do Mysql
-USER="" 
+USER=""
 PASS=""
-
 # Nome do Banco de dados
 DB=""
-
 # Endereço ip ou nome do servidor Mysql
 HOST="localhost"
-
 # Email ou identificador do usuário que tenha uma chave GPG no sistema
-USER_GPG="false" 
-
-
+USER_GPG="false"
 DATE=$(date +%s);
-
 FILE="$DB-$DATE-sql"
 
 # Cria o dump do banco de dados
-
 mysqldump --opt -h$HOST -u$USER -p$PASS $DB > $FILE;
 
 if [ $USER_GPG != false ]
